@@ -6,7 +6,8 @@ document.addEventListener(
     "click",
     (theClickEvent)=>{
         const whatWeClickedOn=theClickEvent.target
-        window.alert(`This walker works in ${whatWeClickedOn.dataset.city}`)
+        if(whatWeClickedOn.dataset.type==="walker"){
+        window.alert(`This walker works in ${whatWeClickedOn.dataset.city}`)}
     }
 )
 
@@ -16,7 +17,8 @@ export const Walkers = () => {
 
     for (const walker of walkers) {
         walkerHTML += `<li data-id="${walker.id}"
-                            data-city="${walker.city}">
+                            data-city="${walker.city}"
+                            data-type="walker">
                         ${walker.name}</li>`
     }
 
